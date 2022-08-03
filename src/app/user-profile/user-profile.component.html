@@ -1,0 +1,75 @@
+
+
+    <h2 style="text-align:center;" class="text-white">PROFILE INFO</h2>        
+<div class="container my-5 border border-dark p-4 " style="background-color: rgb(243, 189, 89);"  >
+
+    <form [formGroup]="profileForm" (ngSubmit)="updateUserProfile()">
+    
+    <!-- name -->
+    <div class="form-group ">
+        
+        <label for="name" >Name</label>
+        <input type="text"  class="form-control my-2 " id="name"  placeholder="Enter your name ..."  formControlName ="name" name="name">
+    </div>
+    <p class="text-danger m-1" *ngIf='name && name.invalid && name.touched' >Name Field Required</p>
+
+    
+    <!-- email -->
+    <div class="form-group ">
+        
+        <label for="email" >Email</label>
+        <input type="email"  class="form-control my-2 " id="email"  placeholder="Enter your Email ..." formControlName ="email" name="email" >
+    </div>
+    <p class="text-danger m-1" *ngIf='email && email.invalid && email.touched' >Email Field Required</p>
+    
+
+    <!-- phone number -->
+    <div class="form-group ">
+        
+        <label for="phn" >Phn Number</label>
+        <input type="number"  class="form-control my-2 " id="phn"  placeholder="Enter your Phn . ..." formControlName ="phn" name="phn" >
+    </div>
+    <p class="text-danger m-1" *ngIf='phn && phn.invalid && phn.touched' >Phn Field Required</p>
+
+   <br>
+    <div class=" form-group ">
+        
+        <label for="password">Password</label>
+        <input type="password"  class="form-control my-2" id="password"  placeholder="Enter your password ..."  formControlName ="password"  name="password">
+    </div>
+    <p class="text-danger m-1" *ngIf='password && password.invalid && password.touched ' >Password Should Contain Atleast 6 Characters </p>
+    
+    <br>
+    <div class=" form-group ">
+        
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password"  class="form-control my-2" id="confirmPassword"  placeholder="Enter Confirm Password ..."  formControlName ="confirmPassword"  name="confirmPassword">
+    </div>
+    <p class="text-danger m-1" *ngIf='confirmPassword && confirmPassword.invalid && confirmPassword.touched ' >Confirm Password Should Contain Atleast 6 Characters </p>
+    
+    <br>
+    <div class=" form-group ">
+        
+        <label for="country">Country</label>
+        <input type="text"  class="form-control my-2" id="country"  placeholder="Enter your country ..."  formControlName ="country"  name="country">
+    </div>
+    <p class="text-danger m-1" *ngIf='country && country.invalid && country.touched ' >Password Should Contain Atleast 6 Characters </p>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-success" id="updateButton"  [disabled]=" name && name.invalid || password && password.invalid || confirmPassword && confirmPassword.invalid || email && email.invalid || phn && phn.invalid || country && country.invalid" >Save Changes</button>
+        <!-- <button (click)="check()"  class="btn btn-primary m-2">Check </button> -->
+    </div>
+
+    
+
+    
+ </form>
+
+</div> 
+ 
+ 
+ 
+<div style="text-align:center;">
+
+    <button type="button" class="btn btn-danger p-2 m-4 " (click)="deleteAccount()"> DELETE ACCOUNT </button>
+</div>

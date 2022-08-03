@@ -1,0 +1,36 @@
+<!-- <h1>This is angular form</h1> -->
+
+<div class="container my-5 border border-dark p-4 bg-warning"  >
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <h3>Login To Your Account</h3>        
+    <div class="form-group ">
+        
+        <label for="email" >Enter the Email</label>
+        <input type="email"  class="form-control my-2 " id="email"  placeholder="Enter your Email ..." formControlName ="email" name="email" >
+    </div>
+    <p class="text-danger m-1" *ngIf='email && email.invalid && email.touched' >Email Field Required</p>
+    <br>
+    <div class=" form-group ">
+        
+        <label for="password">Enter the password</label>
+        <input type="password"  class="form-control my-2" id="pwd"  placeholder="Enter your password ..."  formControlName ="password"  name="password">
+    </div>
+    <p class="text-danger m-1" *ngIf='password && password.invalid && password.touched ' >Password Should Contain Atleast 6 Characters </p>
+    
+    <br>
+    <div>
+        <button type="submit" class="btn btn-success" id="submitButton"  [disabled]=" email && email.invalid || password && password.invalid " >Login</button>
+        
+       <a href="/register"  class="btn btn-dark m-2" > Not have Account ? </a> 
+    </div>
+
+    
+
+    
+ </form>
+
+ 
+
+</div> 
+

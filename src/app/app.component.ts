@@ -1,42 +1,32 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-
+// import { FormBuilder } from '@angular/forms';
+import {FormGroup, FormControl,Validators} from '@angular/forms'
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  actName="Elon Musk";
-  actPassword="123456789"
-  nameNotFound="";
-  passwordNotFound="";
-  title = 'helloangular';
-  name:String='';
-  password:String='';
   
-  setValue(name:String , password:String){
-    console.log(name,password)
-    this.name=name;
-    this.password=password;
-    
-
-    if(this.name==="")
-    this.nameNotFound="Enter Your Name";
-    
-    if(this.password==="")
-    this.passwordNotFound="Enter Your Password"
-
-    if(this.actName==this.name && this.actPassword ==this.password)
-    alert("Logged In Success")
-    else
-    if(!(this.name==""||this.password==""))
-    alert("Sorry Invalid Credentials");
-    window.location.reload();
+  constructor(private readonly router:Router){}
+  
+  btnlogin(){
+    this.router.navigate(['/login'])
   }
-  check()
+
+  btnregister(){
+    this.router.navigate(['/register'])
+  }
+
+  btndashboard(){
+    this.router.navigate(['/dashboard'])
+  }
+
+  userProfile()
   {
-    console.log(this.name,this.password);
-    alert("Name = " + this.name + "   \nPassword =" +  this.password); 
+    // this.router.navigateByUrl('/user')
   }
+
 }

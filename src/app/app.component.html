@@ -1,27 +1,15 @@
-<!-- <h1>This is angular form</h1> -->
+<div >
 
-<div class="container my-5 border border-dark p-4">
+    <div style="text-align: center;" class="my-5">
+        <h2 class="text-white">HOME PAGE</h2>
+        <button (click)="btnlogin()" class="btn btn-primary m-2">login</button>
+        <!-- <br> -->
+        <button (click)="btnregister()" class="btn btn-primary m-2" >Register</button>
+        <!-- <br> -->
+        <button (click)="btndashboard()" class="btn btn-primary m-2" >Dashboard</button>
+        
+    </div>
+    <br>
+<router-outlet></router-outlet>
 
-    <form >
-    <h3>Login To Your Account</h3>        
-    <div class="form-group w-75">
-        
-        <label for="name" >Enter the name</label>
-        <input type="text" name="name" class="form-control my-2 w-80" id="name" #name placeholder="Enter your name ...">
-    </div>
-    <p class="text-danger m-1">{{nameNotFound}}</p>
-    <br>
-    <div class=" form-group w-75">
-        
-        <label for="password">Enter the password</label>
-        <input type="password" name="password" class="form-control my-2" id="password" #password placeholder="Enter your password ...">
-    </div>
-    <p class="text-danger m-1">{{passwordNotFound}}</p>
-    <br>
-    <div>
-        <button type="submit" class="btn btn-success" (click)="setValue(name.value,password.value)" >Login</button>
-        <button (click)="check()"  class="btn btn-primary m-2">Check </button>
-    </div>
-    
-</form>
 </div>

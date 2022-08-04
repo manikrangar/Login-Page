@@ -22,6 +22,8 @@ export class DashboardComponent implements OnInit {
         console.log(params); // { order: "popular"}
         console.log(params['id']);
         this.userId=params['id'];
+        if(this.userId==undefined)
+        this.router.navigate(['/login']);
       }
     );
   }
@@ -34,10 +36,5 @@ export class DashboardComponent implements OnInit {
 
     alert("userProfile")
   }
-
-
-
-
-  
 
 }
